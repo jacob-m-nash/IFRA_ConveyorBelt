@@ -36,7 +36,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler
+from launch.actions import ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler, SetEnvironmentVariable
 from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 import xacro
@@ -65,7 +65,16 @@ def load_yaml(package_name, file_path):
     
 # ========== **GENERATE LAUNCH DESCRIPTION** ========== #
 def generate_launch_description():
+    # ***** GAZEBO MODEL PATH ***** #
+    models_path = os.path.join(
+        get_package_share_directory('conveyorbelt_gazebo'),
+        'models')
     
+    # Set the GAZEBO_MODEL_PATH environment variable
+    set_gazebo_model_path = SetEnvironmentVariable(
+        name='GAZEBO_MODEL_PATH',
+        value=models_path + ':' + os.environ.get('GAZEBO_MODEL_PATH', '')
+    )
     # ***** GAZEBO ***** #   
     # DECLARE Gazebo WORLD file:
     conveyorbelt_gazebo = os.path.join(
