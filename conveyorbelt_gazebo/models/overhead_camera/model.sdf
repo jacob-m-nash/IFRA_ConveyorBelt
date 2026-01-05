@@ -6,8 +6,11 @@
 
     <link name="camera_link">
       <visual name="cam_vis">
-        <geometry><box><size>0.02 0.02 0.02</size></box></geometry>
-        <material><ambient>0.5 0.5 0.5 1</ambient></material>
+        <geometry><box><size>0.02 0.03 0.04</size></box></geometry>
+        <material>
+          <ambient>1.0 0.5 0.0 1</ambient>
+          <diffuse>1.0 0.5 0.0 1</diffuse>
+        </material>
       </visual>
 
       <sensor name="conveyor_camera" type="camera">
