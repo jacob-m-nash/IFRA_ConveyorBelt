@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 
 <!--
 
@@ -28,7 +28,8 @@
 
 # ======= CITE OUR WORK ======= #
 # You can cite our work with the following statement:
-# IFRA-Cranfield (2023) Gazebo-ROS2 Conveyor Belt Plugin. URL: https://github.com/IFRA-Cranfield/IFRA_ConveyorBelt.
+# IFRA-Cranfield (2023) Gazebo-ROS2 Conveyor Belt Plugin. URL:
+https://github.com/IFRA-Cranfield/IFRA_ConveyorBelt.
 
 -->
 
@@ -58,10 +59,21 @@
       <pose>0 0 0 0 0 0</pose>
       <uri>model://conveyor_belt</uri>
     </include>
-   
+
     <include>
       <name>overhead_cam</name>
       <uri>model://overhead_camera</uri>
+    </include>
+
+    <include>
+      <name>bin_1</name>
+      <uri>model://jn_crate</uri>
+      <pose>0.125 0.75 0.25 0 0 0</pose>
+    </include>
+    <include>
+      <name>bin_2</name>
+      <uri>model://jn_crate</uri>
+      <pose>-0.125 0.75 0.25 0 0 0</pose>
     </include>
   </world>
 
