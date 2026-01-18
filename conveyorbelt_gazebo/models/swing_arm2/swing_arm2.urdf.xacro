@@ -109,8 +109,6 @@
 
   <gazebo>
     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-      <!--
-      <parameters>/home/jacob/code/conveyor-gate/src/conveyor-model/conveyorbelt_gazebo/config/swing_arm_controllers.yaml</parameters> -->
       <parameters>$(find conveyorbelt_gazebo)/config/swing_arm_controllers.yaml</parameters>
     </plugin>
   </gazebo>
